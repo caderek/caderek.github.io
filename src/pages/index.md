@@ -1,3 +1,5 @@
+<!-- TEMPLATE:index -->
+<!-- PATH:/ -->
 <!-- TITLE:Home -->
 
 # Hello World
