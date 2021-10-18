@@ -10,4 +10,4 @@ Welcome to my page - WIP
 - bar
   - baz
 
-![Gramma](https://raw.githubusercontent.com/caderek/gramma/master/assets/banner-small.png)
+<!-- ![Gramma](https://raw.githubusercontent.com/caderek/gramma/master/assets/banner-small.png) -->

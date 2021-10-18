@@ -5,22 +5,27 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "node scripts/build.js; sass --no-source-map src/styles:docs/styles",
-    "dev": "node scripts/build.js",
-    "watch": "node scripts/watch.js & sass --no-source-map --watch src/styles:docs/styles",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node scripts/build.js; npm run styles",
+    "watch": "node scripts/watch.js & npm run styles:watch & npm run live",
+    "styles": "sass --no-source-map src/styles:docs/styles",
+    "styles:watch": "sass --no-source-map --watch src/styles:docs/styles",
+    "live": " browser-sync start --server docs --files docs"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "@types/imagemin": "^8.0.0"
+  },
   "devDependencies": {
     "@arrows/composition": "^1.2.2",
     "@arrows/multimethod": "^2.1.0",
-    "chokidar": "^3.5.2",
+    "browser-sync": "^2.27.5",
     "gramma": "^1.5.0",
+    "imagemin": "^8.0.1",
+    "imagemin-jpegtran": "^7.0.0",
+    "imagemin-pngquant": "^9.0.2",
     "kleur": "^4.1.4",
-    "log-update": "^4.0.0",
     "marked": "^3.0.7",
     "sass": "^1.43.2"
   }

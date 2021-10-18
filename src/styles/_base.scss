@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-color: white;
+  font-size: 2rem;
+  font-family: "Andada Pro", sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  max-width: 100rem;
+  margin: 2rem auto 1rem;
+  padding: 1rem;
+}
+
+h1 {
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  max-width: 100rem;
+  margin: auto;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+pre {
+  max-width: 100rem;
+  display: block;
+  margin: auto;
+  display: block;
+}
+
+ul {
+  max-width: 100rem;
+  margin: auto;
+}
+
+ul li {
+  margin-left: 3rem;
+}
+
+ol {
+  padding-left: 1rem;
+  max-width: 100rem;
+  margin: auto;
+}
+
+ol li {
+  margin-left: 3.5rem;
+}
+
+header {
+  position: relative;
+  margin-bottom: 5rem;
+  overflow: hidden;
+  padding-bottom: 1rem;
+
+  img {
+    width: 100%;
+    box-shadow: 0 0 1.5rem black;
+  }
+
+  h1 {
+    position: absolute;
+    bottom: 1vw;
+    left: 1.5vw;
+    font-size: 7vw;
+    color: white;
+    text-shadow: 0 0 1.5rem black;
+  }
+}
