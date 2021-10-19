@@ -10,8 +10,8 @@ const TYPES = {
   other: "other",
 }
 
-const readFile = (path) => {
-  return fs.readFileSync(path).toString()
+const readFile = (file) => {
+  return { file, content: fs.readFileSync(file).toString() }
 }
 
 const savePage = ({ url, pageContent }) => {
@@ -28,17 +28,15 @@ const savePage = ({ url, pageContent }) => {
   return file
 }
 
-const fixLinks = (text) => {
-  return text
-    .replace(/(\(\s*\.\.\/)|(\(\s*\/src)/g, "(/")
-    .replace(/(src\s*=\s*["']\s*\/src\/)|(src\s*=\s*["']\s*\.\.\/)/, 'src="/')
+const fixLinks = (content) => {
+  return content.replace(/(]\(\s*\.\.\/)|(]\(\s*\/src)/g, "](/")
 }
 
-const extractVars = (text) => {
-  const matches = text.match(/<!--.+:.+-->/gi) || []
+const extractVars = ({ file, content }) => {
+  const matches = content.match(/<!--\s*\$.+:.+-->/gi) || []
 
   matches.forEach((match) => {
-    text = text.replace(match, "")
+    content = content.replace(match, "")
   })
 
   const pairs = matches.map((match) => {
@@ -47,25 +45,30 @@ const extractVars = (text) => {
       .split(":")
       .map((x) => x.trim())
 
-    return [name.toLowerCase(), value]
+    return [name.slice(1), value]
   })
 
   const vars = Object.fromEntries(pairs)
+  const fileName = path.parse(file).name
 
-  return { text, vars }
+  vars.path = vars.path ? vars.path.replace(/\$file/, fileName) : fileName
+
+  return { content, vars }
 }
 
-const embedInTemplate = ({ text, vars }) => {
+const embedInTemplate = ({ content, vars }) => {
   const template = vars.template ?? "index"
-  const title = vars.title ?? ""
 
   const templateSrc = path.join("src", "templates", `${template}.html`)
 
-  const templateContent = readFile(templateSrc)
+  const templateContent = readFile(templateSrc).content
 
-  const pageContent = templateContent
-    .replace(/{title}/i, title)
-    .replace(/{content}/i, text)
+  let pageContent = templateContent.replace(/{\s*content\s*}/, content)
+
+  for (const key in vars) {
+    const regex = new RegExp(`{\s*${key}\s*}`, "g")
+    pageContent = pageContent.replace(regex, vars[key])
+  }
 
   return { pageContent, url: vars.path }
 }
@@ -79,8 +82,8 @@ const getType = multi(
 const buildMarkdownPage = rail(
   readFile,
   extractVars,
-  ({ text, vars }) => ({ text: fixLinks(text), vars }),
-  ({ text, vars }) => ({ text: marked(text), vars }),
+  ({ content, vars }) => ({ content: fixLinks(content), vars }),
+  ({ content, vars }) => ({ content: marked(content), vars }),
   embedInTemplate,
   savePage,
 )

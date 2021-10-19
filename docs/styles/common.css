@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Andada+Pro:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono&family=Manrope:wght@400;700&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,16 +9,19 @@
 
 html {
   font-size: 10px;
-
-  @media (max-width: 1000px) {
+}
+@media (max-width: 1000px) {
+  html {
     font-size: 1vw;
   }
-
-  @media (max-width: 768px) {
+}
+@media (max-width: 768px) {
+  html {
     font-size: 1.5vw;
   }
-
-  @media (max-width: 500px) {
+}
+@media (max-width: 500px) {
+  html {
     font-size: 2vw;
   }
 }
@@ -48,8 +52,14 @@ h6 {
   font-family: "Manrope", sans-serif;
   line-height: 1;
   color: #151d28;
-
-  @media (max-width: 1000px) {
+}
+@media (max-width: 1000px) {
+  h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     padding: 2rem;
   }
 }
@@ -92,8 +102,9 @@ p {
   overflow-x: hidden;
   text-align: justify;
   line-height: 1.6;
-
-  @media (max-width: 1000px) {
+}
+@media (max-width: 1000px) {
+  p {
     padding: 0.5rem 2rem;
   }
 }
@@ -142,8 +153,9 @@ li {
 
 img {
   width: 100%;
-
-  @media (max-width: 1000px) {
+}
+@media (max-width: 1000px) {
+  img {
     width: 100vw;
     position: relative;
     left: -2rem;
@@ -155,27 +167,26 @@ hr {
   height: 2px;
   background-color: #4f8fba;
   background-image: linear-gradient(to right, #73bed3, #a2dc6e);
-
-  @media (max-width: 1000px) {
+}
+@media (max-width: 1000px) {
+  hr {
     margin-left: 2rem;
     margin-right: 2rem;
   }
 }
 
 blockquote {
-  // background: #f5f5f5;
   font-style: italic;
   color: #202e37;
   border-left: solid 1rem;
   border-color: #202e37;
   margin: 3rem 0;
   padding: 3rem;
-
-  h6 {
-    text-align: right;
-    position: relative;
-    top: 3rem;
-  }
+}
+blockquote h6 {
+  text-align: right;
+  position: relative;
+  top: 3rem;
 }
 
 a,
@@ -214,4 +225,85 @@ th {
 
 tbody tr:nth-child(2n) {
   background-color: rgba(0, 0, 0, 0.03);
+}
+
+code,
+code[class*=language-] {
+  font-family: "JetBrains Mono", monospace;
+  text-shadow: none;
+  color: #394a50;
+  white-space: pre-wrap;
+}
+
+code {
+  font-size: 1.8rem;
+  color: #394a50;
+  background-color: #f5f5f5;
+  padding: 0 0.5rem;
+  border-radius: 0.3rem;
+}
+
+pre > code,
+pre > code[class*=language-] {
+  font-size: 1.4rem;
+  background-color: transparent;
+  padding: 0;
+}
+
+pre,
+pre[class*=language-] {
+  background: #f5f5f5;
+  line-height: unset;
+  margin: 3rem auto;
+  padding: 1em;
+}
+
+pre,
+pre[class*=language-sh] {
+  background: #202e37;
+}
+
+pre code,
+pre code[class*=language-sh] {
+  color: #a8b5b2;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.string {
+  background: none;
+}
+
+.token.function {
+  color: #35764e;
+}
+
+.token.keyword {
+  color: #3485bb;
+}
+
+.token.operator {
+  color: #3c5e8b;
+}
+
+.token.constant {
+  color: #7a4841;
+}
+
+.token.boolean,
+.token.number {
+  color: #ad7757;
+}
+
+.token.string {
+  color: #75a743;
+}
+
+.token.regex {
+  color: #c65197;
+}
+
+.token.class-name {
+  color: #a23e8c;
 }

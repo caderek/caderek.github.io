@@ -34,7 +34,7 @@ const watch = async () => {
       }
     }
 
-    await sleep(500)
+    await sleep(1000)
   }
 }
 

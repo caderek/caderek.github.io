@@ -1,219 +1,97 @@
-<!-- TEMPLATE:blog -->
-<!-- PATH:/blog -->
-<!-- TITLE:Blog -->
+<!-- $template:blog -->
+<!-- $path:/blog -->
+<!-- $title:blog -->
+<!-- $image:/images/leopard.jpg -->
+<!-- $imageAuthor:Artem Beliaikin -->
+<!-- $date:date -->
 
-<header>
-    <img src="../images/pexels-pixabay-326055.jpg" />
-    <h1>Functional<br>multimethods</h1>
-</header>
+# Header level 1
 
-# What is a multimethod?
+## Header level 2
 
-This is some blog post.
+### Header level 3
 
-Another paragraph.
+#### Header level 4
 
-Another paragraph.
+##### Header level 5
 
-```js
-/* Original Redux code */
+###### Header level 6 (special)
 
-function createStore(reducer, preloadedState, enhancer) {
-  if (
-    (typeof preloadedState === "function" && typeof enhancer === "function") ||
-    (typeof enhancer === "function" && typeof arguments[3] === "function")
-  ) {
-    throw new Error("Several store enhancers")
-  }
+Lorem ipsum dolor sit amet, [consectetur adipiscing elit](#elo). Nulla ut nulla enim. Etiam eu sagittis metus. Vivamus in quam lacus. Suspendisse maximus lectus gravida leo accumsan sagittis viverra non tortor. Proin viverra elementum justo in posuere. Maecenas varius consectetur mi, sit amet mattis justo vulputate ut. Suspendisse tincidunt malesuada accumsan. `Interdum` et malesuada fames ac ante ipsum primis in faucibus. Quisque accumsan, [mauris](#a) sed gravida `semper`, tellus neque convallis diam, iaculis sollicitudin magna ex sit amet risus. Nam aliquam augue tempor ipsum ultricies, a tempus dui aliquet.
 
-  if (typeof preloadedState === "function" && typeof enhancer === "undefined") {
-    enhancer = preloadedState
-    preloadedState = undefined
-  }
+> Sed ultrices risus velit, et auctor diam condimentum nec. Ut sit amet tortor in ante rutrum porta. Aliquam facilisis turpis non eros euismod, in consectetur erat pharetra. Proin faucibus, lacus a ullamcorper aliquam, erat urna efficitur eros, sit amet venenatis enim quam sit amet ipsum.
+>
+> Not sure by whom exactly...
+>
+> ###### Anonymous
 
-  if (typeof enhancer !== "undefined") {
-    if (typeof enhancer !== "function") {
-      throw new Error(`Expected the enhancer to be a function.`)
-    }
+**Aliquam fermentum magna quis placerat laoreet. Mauris sollicitudin rhoncus massa pretium scelerisque. Suspendisse auctor commodo purus, ut dapibus felis. Proin hendrerit porttitor venenatis. Aenean rhoncus posuere ligula nec viverra. Ut ac ullamcorper ex. Nam quis urna ante.**
 
-    return enhancer(createStore)(reducer, preloadedState)
-  }
-
-  if (typeof reducer !== "function") {
-    throw new Error(`Expected the root reducer to be a function.`)
-  }
-
-  // Store creation code...
-}
-
-export default createStore
+```sh
+Some pre,
+no language specified.
 ```
 
-```js
-import { multi, method, _ } from "@arrows/multimethod"
-import { not, notIn } from "./predicates.js"
+Morbi vel porta justo. Aliquam vitae augue elementum, rutrum sapien vel, congue quam. Suspendisse potenti. Vestibulum mollis quis mauris sit amet molestie. Aliquam fermentum fermentum turpis, et `lobortis` mi accumsan non. Nullam quis nulla id sapien rutrum pellentesque. Praesent finibus eu ante nec finibus. Aenean maximus erat a sem efficitur, a vehicula urna aliquam. Aliquam erat volutpat. Suspendisse efficitur tellus diam, eget suscipit ex feugiat vitae.
 
-/* Direct translation */
+---
 
-const createStore = multi(
-  (...args) => args.slice(0, 4).map((arg) => typeof arg),
+Maecenas vel nunc nec turpis sodales aliquam. Nunc rutrum ante in diam semper elementum. Pellentesque pharetra in enim sit amet fermentum. Cras sodales orci sit amet ligula feugiat, eget mattis ante consectetur. Curabitur lacus neque, scelerisque non ipsum nec, luctus pulvinar justo.
 
-  method([_, "function", "function", _], () => {
-    throw new Error("Several store enhancers")
-  }),
-
-  method([_, _, "function", "function"], () => {
-    throw new Error("Several store enhancers")
-  }),
-
-  method([_, _, notIn("function", undefined), _], () => {
-    throw new Error(`Expected the enhancer to be a function.`)
-  }),
-
-  method([_, "function", _, _], (reducer, enhancer) => {
-    return enhancer(createStore)(reducer)
-  }),
-
-  method([_, _, "function", _], (reducer, preloadedState, enhancer) => {
-    return enhancer(createStore)(reducer, preloadedState)
-  }),
-
-  method([not("function"), _, _, _], () => {
-    throw new Error(`Expected the root reducer to be a function.`)
-  }),
-
-  method((reducer, preloadedState) => {
-    // Store creation code...
-  }),
-)
-
-export default createStore
+```sh
+Some pre,
+no language specified.
 ```
 
-```js
-import { multi, method, _ } from "@arrows/multimethod"
-import { getType, types } from "@arrows/dispatch"
-import { not, notIn } from "./predicates.js"
+![yo](../images/waterfall.jpg)
 
-/* More elegant version with dispatch utils and separate functions */
+###### -- Image by Someone --
 
-const createStore = multi(
-  (...args) => args.slice(0, 4).map(getType),
-
-  method([_, types.Function, types.Function, _], handleEnhancersError),
-
-  method([_, _, types.Function, types.Function], handleEnhancersError),
-
-  method([_, _, notIn(types.Function, undefined), _], () => {
-    throw new Error(`Expected the enhancer to be a function.`)
-  }),
-
-  method([_, types.Function, _, _], (reducer, enhancer) => {
-    return enhancer(createStore)(reducer)
-  }),
-
-  method([_, _, types.Function, _], (reducer, preloadedState, enhancer) => {
-    return enhancer(createStore)(reducer, preloadedState)
-  }),
-
-  method([not(types.Function), _, _, _], () => {
-    throw new Error(`Expected the root reducer to be a function.`)
-  }),
-
-  method(create),
-)
-
-function handleEnhancersError() {
-  throw new Error("Several store enhancers")
-}
-
-function create(reducer, preloadedState) {
-  // Store creation code...
-}
-
-export default createStore
-```
-
-```js
-// predicates.js
-
-export const not = (y) => (x) => x !== y
-export const notIn = (...arr) => (x) => !arr.includes(x)
-```
-
-```js
-import { multi, method } from "@arrows/multimethod"
-
-/* With custom dispatch per method */
-
-const createStore = multi(
-  method(
-    (a, b, c, d) =>
-      (typeof b === "function" && typeof c === "function") ||
-      (typeof c === "function" && typeof d === "function"),
-    () => {
-      throw new Error("Several store enhancers")
-    },
-  ),
-
-  method(
-    (a, b, c) => c !== undefined && typeof c !== "function",
-    () => {
-      throw new Error(`Expected the enhancer to be a function.`)
-    },
-  ),
-
-  method(
-    (a, b) => typeof b === "function",
-    (reducer, enhancer) => {
-      return enhancer(createStore)(reducer)
-    },
-  ),
-
-  method(
-    (a, b, c) => typeof c === "function",
-    (reducer, preloadedState, enhancer) => {
-      return enhancer(createStore)(reducer, preloadedState)
-    },
-  ),
-
-  method(
-    (a) => typeof a !== "function",
-    () => {
-      throw new Error(`Expected the root reducer to be a function.`)
-    },
-  ),
-
-  method((reducer, preloadedState) => {
-    // Store creation code...
-  }),
-)
-
-export default createStore
-```
-
-List:
+hello
 
 - foo
 - bar
   - baz
   - bat
+    - baz
+    - bat
+      1. foo
+      1. foo
+      1. foo
+      1. foo
 
-Enumerated list:
+world
 
-1. Foo
-1. Foo
-   1. bar
-   1. baz
+5. lorem ipsum
+1. lorem ipsum
+   1. lorem ipsum
+   1. lorem ipsum
+      - lorem ipsum
+      - lorem ipsum
+        1. lorem ipsum
+        1. lorem ipsum
+   1. lorem ipsum
+   1. lorem ipsum
+      - lorem ipsum
+      - lorem ipsum
+        - lorem ipsum
+        - lorem ipsum
 
-## header level 2
+> Sed ultrices risus velit, et auctor diam condimentum nec. Ut sit amet tortor in ante rutrum porta. Aliquam facilisis turpis non eros euismod, in consectetur erat pharetra. Proin faucibus, lacus a ullamcorper aliquam, erat urna efficitur eros, sit amet venenatis enim quam sit amet ipsum.
+>
+> Not sure by whom exactly...
+>
+> ###### Anonymous
 
-### header level 3
+---
 
-#### header level 4
+| header | second | third | fourth | fifth |
+| ------ | ------ | ----- | ------ | ----- |
+| 1      | 4      | 7     | 10     | 13    |
+| 2      | 5      | 8     | 11     | 14    |
+| 3      | 52     | 8     | 11     | 167   |
+| 4      | 35     | 1     | 23     | 68    |
+| 5      | 19     | 8     | 3      | 17    |
+| 6      | 345    | 7     | 890    | 14    |
 
-##### header level 5
-
-###### header level 6
-
-<!-- ![yo](../images/characters.png) -->
+---

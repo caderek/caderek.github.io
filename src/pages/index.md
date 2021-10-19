@@ -1,6 +1,6 @@
-<!-- TEMPLATE:index -->
-<!-- PATH:/ -->
-<!-- TITLE:Home -->
+<!-- $template:index -->
+<!-- $path:/ -->
+<!-- $title:Home -->
 
 # Hello World
 
