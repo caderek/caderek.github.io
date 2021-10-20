@@ -1,5 +1,5 @@
 <!-- $template:post -->
-<!-- $path:/blog/$file -->
+<!-- $path:/articles/$file -->
 <!-- $title:Functional multimethods -->
 <!-- $image:/images/leopard.jpg -->
 <!-- $imageInfo: Photo by Artem Beliaikin (CC) -->

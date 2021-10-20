@@ -237,23 +237,35 @@ aside {
   background-color: #090a14;
   background-image: linear-gradient(to-right, #090a14, black);
   border-right: solid 1px #202e37;
-  color: #202e37;
+  color: #577277;
   font-family: Manrope, sans-serif;
   height: 100vh;
   top: 0;
-  padding: 2rem 2rem 2rem 0;
+  padding: 2rem 0;
+  overflow-y: scroll;
+}
+aside button {
+  font-size: 2rem;
+  width: 100%;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: #090a14;
+  color: #577277;
+  text-align: left;
+  padding: 1rem 2rem;
+}
+aside button:hover {
+  background-color: #151d28;
+  cursor: pointer;
 }
 aside i {
   width: 30px;
 }
-aside li:before {
-  content: "";
-}
-aside ul ul li {
-  font-size: 1.6rem;
-}
-aside ul ul li:before {
-  color: #090a14;
+aside ul {
+  margin: 0;
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
 }
 
 code,
