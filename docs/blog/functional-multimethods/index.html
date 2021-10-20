@@ -11,14 +11,38 @@
     />
     <link rel="stylesheet" href="/styles/common.css" />
     <link rel="stylesheet" href="/styles/post.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
   </head>
   <body>
-    <header style="background-image: url(/images/beach.jpg)">
-      <h1>Functional multimethods</h1>
-      <h2>October 19, 2021</h2>
-      <span>Photo by Artem Beliaikin (CC)</span>
-    </header>
-    <main><p>In this article, I will introduce you to the concept of multimethods.</p>
+    <aside>
+      <ul>
+        <li><i class="las la-home"></i> HOME</li>
+        <li><i class="las la-user-circle"></i> ABOUT</li>
+        <li><i class="las la-pencil-ruler"></i> PROJECTS</li>
+        <li><i class="las la-pen-alt"></i> ARTICLES</li>
+        <ul>
+          <li>
+            <a href="/blog/functional-multimethods">Functional multimethods</a>
+          </li>
+          <li>
+            <a href="/blog/hello-world">Hello World</a>
+          </li>
+          <li>
+            <a href="/blog">more...</a>
+          </li>
+        </ul>
+      </ul>
+    </aside>
+    <div class="box">
+      <header style="background-image: url(/images/leopard.jpg)">
+        <h1>Functional multimethods</h1>
+        <h2>October 19, 2021</h2>
+        <span>Photo by Artem Beliaikin (CC)</span>
+      </header>
+      <main><p>In this article, I will introduce you to the concept of multimethods.</p>
 <h1 id="what-is-a-multimethod">What is a multimethod?</h1>
 <p>Multimethods are functions with superpowers - they can do all that ordinary functions can do, but additionally:</p>
 <ul>
@@ -199,17 +223,18 @@ const createStore = multi(
 export default createStore
 </code></pre>
 </main>
-    <footer>
-      <script
-        src="https://utteranc.es/client.js"
-        repo="caderek/caderek.github.io"
-        issue-term="pathname"
-        label="comments"
-        theme="github-light"
-        crossorigin="anonymous"
-        async
-      ></script>
-    </footer>
+      <footer>
+        <script
+          src="https://utteranc.es/client.js"
+          repo="caderek/caderek.github.io"
+          issue-term="pathname"
+          label="comments"
+          theme="github-light"
+          crossorigin="anonymous"
+          async
+        ></script>
+      </footer>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/components/prism-core.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/plugins/autoloader/prism-autoloader.min.js"></script>
   </body>

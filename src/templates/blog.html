@@ -7,9 +7,31 @@
     <title>{title}</title>
     <link rel="stylesheet" href="/styles/common.css" />
     <link rel="stylesheet" href="/styles/blog.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
   </head>
   <body>
     <header></header>
+    <aside>
+      <ul>
+        <li><i class="las la-home"></i> Home</li>
+        <li><i class="las la-user-circle"></i> About</li>
+        <li><i class="las la-pen-alt"></i> Articles</li>
+        <ul>
+          <li>
+            <a href="/blog/functional-multimethods">Functional multimethods</a>
+          </li>
+          <li>
+            <a href="/blog/hello-world">Hello World</a>
+          </li>
+          <li>
+            <a href="/blog">more...</a>
+          </li>
+        </ul>
+      </ul>
+    </aside>
     <main>{content}</main>
     <footer></footer>
   </body>

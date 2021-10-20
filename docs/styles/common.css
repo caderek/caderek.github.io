@@ -36,6 +36,10 @@ body {
   color: #090a14;
 }
 
+.box {
+  margin-left: 300px;
+}
+
 main {
   max-width: 100rem;
   margin: auto;
@@ -225,6 +229,31 @@ th {
 
 tbody tr:nth-child(2n) {
   background-color: rgba(0, 0, 0, 0.03);
+}
+
+aside {
+  position: fixed;
+  width: 300px;
+  background-color: #090a14;
+  background-image: linear-gradient(to-right, #090a14, black);
+  border-right: solid 1px #202e37;
+  color: #202e37;
+  font-family: Manrope, sans-serif;
+  height: 100vh;
+  top: 0;
+  padding: 2rem 2rem 2rem 0;
+}
+aside i {
+  width: 30px;
+}
+aside li:before {
+  content: "";
+}
+aside ul ul li {
+  font-size: 1.6rem;
+}
+aside ul ul li:before {
+  color: #090a14;
 }
 
 code,

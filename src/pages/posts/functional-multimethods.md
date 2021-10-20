@@ -1,7 +1,7 @@
 <!-- $template:post -->
 <!-- $path:/blog/$file -->
 <!-- $title:Functional multimethods -->
-<!-- $image:/images/beach.jpg -->
+<!-- $image:/images/leopard.jpg -->
 <!-- $imageInfo: Photo by Artem Beliaikin (CC) -->
 <!-- $date:October 19, 2021 -->
 
