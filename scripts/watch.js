@@ -3,7 +3,7 @@ import kleur from "kleur"
 import { multi, method } from "@arrows/multimethod"
 import getAllFiles from "./helpers/getAllFiles.js"
 import buildPage from "./pages.js"
-import compressImage from "./images.js"
+import moveImage from "./images.js"
 
 const DIR = "src"
 
@@ -11,7 +11,7 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
 const handleFile = multi(
   method(/^src[/\\]pages/, buildPage),
-  method(/^src[/\\]images/, compressImage),
+  method(/^src[/\\]images/, moveImage),
   method(() => null),
 )
 

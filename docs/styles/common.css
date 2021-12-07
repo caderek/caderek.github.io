@@ -39,6 +39,11 @@ body {
 .box {
   margin-left: 300px;
 }
+@media (max-width: 1000px) {
+  .box {
+    margin-left: 0;
+  }
+}
 
 main {
   max-width: 100rem;
@@ -57,19 +62,15 @@ h6 {
   line-height: 1;
   color: #151d28;
 }
-@media (max-width: 1000px) {
-  h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    padding: 2rem;
-  }
-}
 
 h1 {
   font-size: 4.2rem;
+  position: relative;
+}
+@media (max-width: 1000px) {
+  h1 {
+    padding: 2rem;
+  }
 }
 
 h2 {
@@ -228,46 +229,164 @@ th {
 }
 
 tbody tr:nth-child(2n) {
+  transition-duration: 0;
   background-color: rgba(0, 0, 0, 0.03);
+}
+
+@keyframes blinker {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.blink {
+  animation: blinker 1s infinite;
+  position: unset;
 }
 
 aside {
   position: fixed;
   width: 300px;
-  background-color: #090a14;
+  background-color: #0e1114;
   background-image: linear-gradient(to-right, #090a14, black);
   border-right: solid 1px #202e37;
-  color: #577277;
+  color: #d7dde8;
   font-family: Manrope, sans-serif;
   height: 100vh;
   top: 0;
-  padding: 2rem 0;
+  overflow-x: hidden;
+}
+@media (max-width: 1000px) {
+  aside {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+  }
+}
+aside h1 {
+  padding: 2rem;
+  color: #6c8299;
+  font-family: "JetBrains Mono", monospace;
+  font-weight: normal;
+  margin: 0;
+  width: 300px;
+  font-size: 3rem;
+}
+@media (max-width: 1000px) {
+  aside h1 {
+    width: 100vw;
+  }
+}
+aside .no-scrollbar {
+  height: 100vh;
+  width: 400px;
+  padding: 0;
   overflow-y: scroll;
 }
+@media (max-width: 1000px) {
+  aside .no-scrollbar {
+    width: 200%;
+    height: auto;
+    position: relative;
+  }
+}
 aside button {
-  font-size: 2rem;
+  font-size: 1.4rem;
   width: 100%;
   border: none;
   padding: 0;
   margin: 0;
-  background-color: #090a14;
-  color: #577277;
+  background-color: #0e1114;
+  color: #6c8299;
+  border-top: solid 1px #202e37;
   text-align: left;
   padding: 1rem 2rem;
+  transition-duration: 0.2s;
 }
-aside button:hover {
-  background-color: #151d28;
+aside .button__last {
+  border-bottom: solid 1px #202e37;
+}
+aside button:hover,
+aside button.selected {
+  background-color: #1d2128;
+  color: #d7dde8;
   cursor: pointer;
 }
-aside i {
-  width: 30px;
+aside span {
+  position: relative;
+  top: -0.6rem;
 }
-aside ul {
+aside i {
+  width: 40px;
+  font-size: 3rem;
+}
+aside .articles {
   margin: 0;
-  padding: 1rem 2rem;
-  font-size: 1.4rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  width: 300px;
+}
+@media (max-width: 1000px) {
+  aside .articles {
+    display: none;
+  }
+}
+aside .articles button {
+  padding: 0;
+  border: solid 1px #4c566a;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-shadow: 0 0 5px black;
+  height: 120px;
+  margin-bottom: 1rem;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  vertical-align: bottom;
+  color: white;
+  opacity: 0.8;
+}
+aside .articles button span {
+  display: block;
+  background-image: linear-gradient(#00000000, #000000);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  top: auto;
+  padding: 4rem 1rem 1rem 1rem;
+  font-weight: 400;
+}
+aside .articles button:hover {
+  border-color: #7c879c;
+  opacity: 1;
+}
+aside li::before {
+  content: "";
 }
 
+.menu__expand {
+  position: absolute;
+  right: 20px;
+  width: auto;
+  display: none !important;
+}
+.menu__expand:hover {
+  color: #d7dde8;
+  cursor: pointer;
+}
+@media (max-width: 1000px) {
+  .menu__expand {
+    display: inline-block !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .mobile-hidden {
+    display: none;
+  }
+}
 code,
 code[class*=language-] {
   font-family: "JetBrains Mono", monospace;
@@ -301,7 +420,7 @@ pre[class*=language-] {
 
 pre,
 pre[class*=language-sh] {
-  background: #202e37;
+  background: #1d2128;
 }
 
 pre code,

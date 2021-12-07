@@ -1,9 +1,6 @@
-<!-- $template:blog -->
-<!-- $path:/blog -->
-<!-- $title:blog -->
-<!-- $image:/images/leopard.jpg -->
-<!-- $imageAuthor:Artem Beliaikin -->
-<!-- $date:date -->
+<!-- $template:articles -->
+<!-- $path:/articles -->
+<!-- $title:Articles -->
 
 # Header level 1
 
@@ -43,7 +40,7 @@ Some pre,
 no language specified.
 ```
 
-![yo](../images/waterfall.jpg)
+![yo](../images/waterfall.png)
 
 ###### -- Image by Someone --
 

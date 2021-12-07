@@ -1,21 +1,18 @@
-import imagemin from "imagemin"
-import imageminJpegtran from "imagemin-jpegtran"
-import imageminPngquant from "imagemin-pngquant"
+import fs from "fs"
+import path from "path"
 
-const compressImage = async (input) => {
-  const destination = "docs/images"
+const BASE = path.join("docs", "images")
 
-  await imagemin([input], {
-    destination,
-    plugins: [
-      imageminJpegtran(),
-      imageminPngquant({
-        quality: [0.6, 0.8],
-      }),
-    ],
-  })
+const moveImage = async (input) => {
+  const destination = path.join(BASE, path.basename(input))
+
+  if (!fs.existsSync(BASE)) {
+    fs.mkdirSync(BASE, { recursive: true })
+  }
+
+  fs.copyFileSync(input, destination)
 
   return destination
 }
 
-export default compressImage
+export default moveImage

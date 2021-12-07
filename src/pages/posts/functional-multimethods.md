@@ -1,7 +1,7 @@
 <!-- $template:post -->
 <!-- $path:/articles/$file -->
 <!-- $title:Functional multimethods -->
-<!-- $image:/images/leopard.jpg -->
+<!-- $image:/images/beach.jpg -->
 <!-- $imageInfo: Photo by Artem Beliaikin (CC) -->
 <!-- $date:October 19, 2021 -->
 
@@ -20,7 +20,7 @@ Multimethods are functions with superpowers - they can do all that ordinary func
 You can try them via [NPM package](https://www.npmjs.com/package/@arrows/multimethod):
 
 ```
-> npm i @arrows/multimethod
+npm i @arrows/multimethod
 ```
 
 Let's look at this code sample:
@@ -148,7 +148,10 @@ export default createStore
 // predicates.js
 
 export const not = (y) => (x) => x !== y
-export const notIn = (...arr) => (x) => !arr.includes(x)
+export const notIn =
+  (...arr) =>
+  (x) =>
+    !arr.includes(x)
 ```
 
 ```js
