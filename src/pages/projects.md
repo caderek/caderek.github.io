@@ -6,7 +6,7 @@
 
 ---
 
-## Benny
+## [Benny](https://github.com/caderek/benny)
 
 A dead simple benchmarking framework for JS/TS libs.
 
@@ -14,7 +14,7 @@ A dead simple benchmarking framework for JS/TS libs.
 
 ---
 
-## Gramma
+## [Gramma](https://caderek.github.io/gramma/)
 
 An interactive, multilingual command-line grammar checker for Linux / Windows / MacOS.
 
@@ -22,7 +22,7 @@ An interactive, multilingual command-line grammar checker for Linux / Windows / 
 
 ---
 
-## Arrows
+## [Arrows](https://github.com/caderek/arrows)
 
 A collection of functional libraries for JavaScript and Typescript.
 
@@ -30,7 +30,7 @@ A collection of functional libraries for JavaScript and Typescript.
 
 ---
 
-## AoC Runner
+## [AoC Runner](https://github.com/caderek/aocrunner)
 
 Advent of Code runner for JavaScript and Typescript - ultra-fast, with simple CLI, customizable template, simple testing utility, live reload, and [adventofcode.com](https://adventofcode.com/2021/about) integration.
 
@@ -38,7 +38,7 @@ Advent of Code runner for JavaScript and Typescript - ultra-fast, with simple CL
 
 ---
 
-## AoC Timer
+## [AoC Timer](https://github.com/caderek/aoctimer)
 
 A language-agnostic, multi-platform tool for Advent of Code to measure your solutions time in relative units, so you can share and compare your results with others.
 
