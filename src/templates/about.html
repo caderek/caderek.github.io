@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>{title}</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css"
     />
     <link rel="stylesheet" href="/styles/common.css" />
-    <link rel="stylesheet" href="/styles/index.css" />
+    <link rel="stylesheet" href="/styles/about.css" />
     <link
       rel="stylesheet"
       href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
@@ -26,12 +26,10 @@
 
         <nav id="nav" class="mobile-hidden">
           <a href="/">
-            <button class="selected">
-              <i class="las la-home"></i><span>HOME</span>
-            </button>
+            <button><i class="las la-home"></i><span>HOME</span></button>
           </a>
           <a href="/about">
-            <button>
+            <button class="selected">
               <i class="las la-user-circle"></i><span>ABOUT</span>
             </button>
           </a>
@@ -67,21 +65,11 @@
     </aside>
     <div class="box">
       <!-- <header style="background-image: url({image})">
-        <h1>Home</h1>
+        <h1>{title}</h1>
         <h2>{date}</h2>
         <span>{imageInfo}</span>
       </header> -->
-      <main><h1 id="hello-world">Hello World</h1>
-<p>Welcome to my page - WIP</p>
-<ul>
-<li>foo</li>
-<li>bar<ul>
-<li>baz</li>
-</ul>
-</li>
-</ul>
-<!-- ![Gramma](https://raw.githubusercontent.com/caderek/gramma/master/assets/banner-small.png) -->
-</main>
+      <main>{content}</main>
       <footer>
         <script
           src="https://utteranc.es/client.js"

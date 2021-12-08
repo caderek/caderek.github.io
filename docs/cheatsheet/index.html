@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Articles</title>
+    <title>Cheat Sheet</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css"
@@ -65,7 +65,7 @@
     </aside>
     <div class="box">
       <!-- <header style="background-image: url({image})">
-        <h1>Articles</h1>
+        <h1>Cheat Sheet</h1>
         <h2>{date}</h2>
         <span>{imageInfo}</span>
       </header> -->
@@ -92,7 +92,7 @@ no language specified.
 no language specified.
 </code></pre>
 <p><img src="/images/waterfall.png" alt="yo"></p>
-<h6 id="---image-by-someone---">-- Image by Someone --</h6>
+<h6 id="---inline-image-description---">-- Inline image description --</h6>
 <p>hello</p>
 <ul>
 <li>foo</li>
@@ -199,6 +199,46 @@ no language specified.
 </tr>
 </tbody></table>
 <hr>
+<p>Code example:</p>
+<pre><code class="language-js">import { multi, method, _ } from &quot;@arrows/multimethod&quot;
+import { not, notIn } from &quot;./predicates.js&quot;
+
+/* Direct translation */
+
+const createStore = multi(
+  (...args) =&gt; args.slice(0, 4).map((arg) =&gt; typeof arg),
+
+  method([_, &quot;function&quot;, &quot;function&quot;, _], () =&gt; {
+    throw new Error(&quot;Several store enhancers&quot;)
+  }),
+
+  method([_, _, &quot;function&quot;, &quot;function&quot;], () =&gt; {
+    throw new Error(&quot;Several store enhancers&quot;)
+  }),
+
+  method([_, _, notIn(&quot;function&quot;, undefined), _], () =&gt; {
+    throw new Error(`Expected the enhancer to be a function.`)
+  }),
+
+  method([_, &quot;function&quot;, _, _], (reducer, enhancer) =&gt; {
+    return enhancer(createStore)(reducer)
+  }),
+
+  method([_, _, &quot;function&quot;, _], (reducer, preloadedState, enhancer) =&gt; {
+    return enhancer(createStore)(reducer, preloadedState)
+  }),
+
+  method([not(&quot;function&quot;), _, _, _], () =&gt; {
+    throw new Error(`Expected the root reducer to be a function.`)
+  }),
+
+  method((reducer, preloadedState) =&gt; {
+    // Store creation code...
+  }),
+)
+
+export default createStore
+</code></pre>
 </main>
       <footer>
         <script

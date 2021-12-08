@@ -25,28 +25,38 @@
         </h1>
 
         <nav id="nav" class="mobile-hidden">
-          <button class="selected">
-            <i class="las la-home"></i><span>HOME</span>
-          </button>
-          <button><i class="las la-user-circle"></i><span>ABOUT</span></button>
-          <button>
-            <i class="las la-pencil-ruler"></i><span>PROJECTS</span>
-          </button>
-          <button class="button__last">
-            <i class="las la-pen-alt"></i><span>ARTICLES</span>
-          </button>
+          <a href="/">
+            <button class="selected">
+              <i class="las la-home"></i><span>HOME</span>
+            </button>
+          </a>
+          <a href="/about">
+            <button>
+              <i class="las la-user-circle"></i><span>ABOUT</span>
+            </button>
+          </a>
+          <a href="/projects">
+            <button>
+              <i class="las la-pencil-ruler"></i><span>PROJECTS</span>
+            </button>
+          </a>
+          <a href="/articles">
+            <button class="button__last">
+              <i class="las la-pen-alt"></i><span>ARTICLES</span>
+            </button>
+          </a>
           <div class="articles">
-            <a href="/blog/functional-multimethods"
+            <a href="/articles/js-benchmarking"
               ><button style="background-image: url(/images/leopard.jpg)">
                 <span>JavaScript benchmarking done right</span>
               </button></a
             >
-            <a href="/blog/functional-multimethods"
+            <a href="/articles/functional-multimethods"
               ><button style="background-image: url(/images/beach.jpg)">
                 <span>Functional multimethods</span>
               </button></a
             >
-            <a href="/blog/functional-multimethods"
+            <a href="/articles/other"
               ><button style="background-image: url(/images/waterfall.png)">
                 <span>Some other very interesting topic</span>
               </button></a
