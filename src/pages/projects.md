@@ -10,7 +10,7 @@
 
 A dead simple benchmarking framework for JS/TS libs.
 
-[GitHub]() | [NPM]()
+[GitHub](https://github.com/caderek/benny) | [NPM](https://www.npmjs.com/package/benny)
 
 ---
 
