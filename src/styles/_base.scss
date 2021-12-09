@@ -239,13 +239,16 @@ tbody tr:nth-child(2n) {
   position: unset;
 }
 
+$color-side-background: #0e1114;
+$color-side-text: #d7dde8;
+
 aside {
   position: fixed;
   width: 300px;
-  background-color: #0e1114;
-  background-image: linear-gradient(to-right, #090a14, black);
+  background-color: $color-side-background;
+  // background-image: linear-gradient(to-right, #090a14, black);
   border-right: solid 1px #202e37;
-  color: #d7dde8;
+  color: $color-side-text;
   font-family: Manrope, sans-serif;
   height: 100vh;
   top: 0;

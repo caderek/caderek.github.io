@@ -250,7 +250,6 @@ aside {
   position: fixed;
   width: 300px;
   background-color: #0e1114;
-  background-image: linear-gradient(to-right, #090a14, black);
   border-right: solid 1px #202e37;
   color: #d7dde8;
   font-family: Manrope, sans-serif;
