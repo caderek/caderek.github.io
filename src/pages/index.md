@@ -2,4 +2,4 @@
 <!-- $path:/ -->
 <!-- $title:Home -->
 
-# HOME
+<!-- ## Recent articles -->

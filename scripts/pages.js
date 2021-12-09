@@ -3,6 +3,7 @@ import fs from "fs"
 import path from "path"
 import { multi, method } from "@arrows/multimethod"
 import { rail } from "@arrows/composition"
+import getAllFiles from "./helpers/getAllFiles.js"
 
 const TYPES = {
   page: "page",
@@ -94,6 +95,11 @@ const buildHTMLPage = (file) => {
 
 const buildFromHTMLTemplate = (file) => {
   console.dir(`Building from html template: ${file}`)
+  const pages = getAllFiles("src/pages")
+
+  pages.forEach(buildPage)
+
+  return "docs"
 }
 
 const buildPage = multi(
@@ -104,10 +110,9 @@ const buildPage = multi(
   },
   method([TYPES.page, "md"], buildMarkdownPage),
   method([TYPES.page, "html"], buildHTMLPage),
-  method([TYPES.template, "html"], buildFromHTMLTemplate),
   method((file) => {
     throw new Error(`FIle "${file}" not supported`)
   }),
 )
 
-export default buildPage
+export { buildPage, buildFromHTMLTemplate, getType, TYPES }

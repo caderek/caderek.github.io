@@ -1,1 +1,58 @@
+body {
+  background-color: #0e1114;
+}
 
+header {
+  height: 100vh;
+  background-color: #6c8299;
+  color: #0e1114;
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+h1 {
+  font-family: "JetBrains Mono", monospace;
+  font-weight: normal;
+  font-size: 7rem;
+  text-align: center;
+}
+
+.menu {
+  text-align: center;
+  padding: 2rem;
+}
+.menu button {
+  padding: 2rem;
+  width: 200px;
+  margin: 1rem;
+  background-color: #7b90a7;
+  transition: 0.2s;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.menu button:hover {
+  background-color: #0e1114;
+  color: #6c8299;
+}
+
+.links {
+  padding: 2rem;
+  text-align: center;
+  font-size: 5rem;
+}
+.links a,
+.links a:hover,
+.links a:visited {
+  color: #0e1114;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+.links a:hover {
+  color: #1d2128;
+}
