@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
+    <title>{{title}}</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/themes/prism.css"
@@ -44,32 +44,25 @@
             </button>
           </a>
           <div class="articles">
-            <a href="/articles/js-benchmarking"
-              ><button style="background-image: url(/images/leopard.jpg)">
-                <span>JavaScript benchmarking done right</span>
-              </button></a
-            >
-            <a href="/articles/functional-multimethods"
-              ><button style="background-image: url(/images/beach.jpg)">
-                <span>Functional multimethods</span>
-              </button></a
-            >
-            <a href="/articles/other"
-              ><button style="background-image: url(/images/waterfall.png)">
-                <span>Some other very interesting topic</span>
-              </button></a
-            >
+            <h2>Recent:</h2>
+            {{#each articles}}
+            <a href="{{path}}">> {{title}}</a>
+            <hr />
+            {{/each}}
           </div>
         </nav>
       </div>
     </aside>
     <div class="box">
-      <!-- <header style="background-image: url({image})">
-        <h1>{title}</h1>
-        <h2>{date}</h2>
-        <span>{imageInfo}</span>
-      </header> -->
-      <main>{content}</main>
+      <main>
+        <h1>ARTICLES</h1>
+        {{#each articles}}
+        <hr />
+        <h2><a href="{{path}}">{{title}}</a></h2>
+        <p><strong>{{formattedDate}} | {{tags}}</strong></p>
+        <p>{{firstParagraph}} <a href="{{path}}">...read more</a></p>
+        {{/each}} {{{content}}}
+      </main>
       <footer></footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.25.0/components/prism-core.min.js"></script>

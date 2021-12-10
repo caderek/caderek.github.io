@@ -1,11 +1,14 @@
-<!-- $template:post -->
+<!-- $template:article -->
 <!-- $path:/articles/$file -->
 <!-- $title:Functional multimethods -->
 <!-- $image:/images/beach.jpg -->
 <!-- $imageInfo: Photo by Artem Beliaikin (CC) -->
-<!-- $date:October 19, 2021 -->
+<!-- $date:2021-10-19 -->
+<!-- $tags:JavaScript | TypeScript -->
 
 In this article, I will introduce you to the concept of multimethods.
+
+_WORK IN PROGRESS_
 
 # What is a multimethod?
 

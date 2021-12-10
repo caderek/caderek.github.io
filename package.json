@@ -15,7 +15,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/imagemin": "^8.0.0"
+    "@types/imagemin": "^8.0.0",
+    "handlebars": "^4.7.7"
   },
   "devDependencies": {
     "@arrows/composition": "^1.2.2",
