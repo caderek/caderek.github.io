@@ -493,6 +493,10 @@ footer li + li::before {
 /* Mobile */
 
 @media (max-width: 1006px) {
+  section {
+    padding-top: 3.5rem;
+  }
+
   .card .miniature,
   .card .info,
   .card .form {
