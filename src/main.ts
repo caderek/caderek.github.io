@@ -42,7 +42,33 @@ async function populateStats(
   }
 }
 
+const getPreferredScheme = () =>
+  window?.matchMedia?.("(prefers-color-scheme:dark)")?.matches
+    ? "dark"
+    : "light";
+
+function registerModeHandlers() {
+  const $modeButton = document.getElementById("mode") as HTMLButtonElement;
+  $modeButton.hidden = false;
+
+  const savedMode = localStorage.getItem("mode");
+
+  if (savedMode === "dark" || (!savedMode && getPreferredScheme() === "dark")) {
+    document.body.classList.add("dark");
+  }
+
+  $modeButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    localStorage.setItem(
+      "mode",
+      document.body.classList.contains("dark") ? "dark" : "light"
+    );
+  });
+}
+
 async function main() {
+  registerModeHandlers();
   populateStats("npm", fetchNpmDownloads);
   populateStats("github", fetchGitHubStars);
 }
