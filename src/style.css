@@ -201,7 +201,7 @@ header .mode {
 header .mode::before {
   content: var(--mode-ico);
   font-size: 1.5rem;
-  color: var(--color-primary-dim);
+  color: var(--color-accent-contrast);
 }
 
 /* Navigation */
