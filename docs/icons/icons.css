@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "icons";
+    src: url("./icons.ttf?9fd9f6bf56a006fce0f87ab25ab69b55") format("truetype"),
+url("./icons.woff?9fd9f6bf56a006fce0f87ab25ab69b55") format("woff"),
+url("./icons.woff2?9fd9f6bf56a006fce0f87ab25ab69b55") format("woff2");
+}
+
+i[class^="icon-"]:before, i[class*=" icon-"]:before {
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-github:before {
+    content: "\f101";
+}
+.icon-mode-dark:before {
+    content: "\f102";
+}
+.icon-mode-light:before {
+    content: "\f103";
+}
+.icon-npm:before {
+    content: "\f104";
+}
