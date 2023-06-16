@@ -289,6 +289,11 @@ p a {
   color: var(--color-primary-dim);
 }
 
+#projects > p,
+#libraries > p {
+  margin-bottom: 2rem;
+}
+
 aside {
   background-color: var(--color-accent);
   padding: 1.5rem 1rem;
