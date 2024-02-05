@@ -21,10 +21,6 @@ article ul a::before {
   -moz-osx-font-smoothing: grayscale;
 }
 
-article ul a {
-  /* background-color: red; */
-}
-
 article ul a::before {
   position: absolute;
   left: 0;
