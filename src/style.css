@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Fira+Code&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&family=Fira+Code&display=swap&family=Ubuntu&display=swap");
 
 @font-face {
   font-family: "Icons";
-  src: url("/icons/icons.ttf?874e82c750617d187fb86377aff91dd6")
-      format("truetype"),
+  src:
+    url("/icons/icons.ttf?874e82c750617d187fb86377aff91dd6") format("truetype"),
     url("/icons/icons.woff?874e82c750617d187fb86377aff91dd6") format("woff"),
     url("/icons/icons.woff2?874e82c750617d187fb86377aff91dd6") format("woff2");
 }
@@ -57,7 +57,8 @@ article ul a::before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --font-sans: "Baloo 2", sans-serif;
+  --font-special: "Rubik", sans-serif;
+  --font-sans: "Ubuntu", sans-serif;
   --font-mono: "Fira Code", monospace;
   --font-ico: "Icons";
 
@@ -67,21 +68,21 @@ article ul a::before {
   --hue-primary-contrast: 0deg;
   --hue-accent: 275deg;
   --hue-accent-contrast: 275deg;
-  --overlay-hue-shift: 220deg;
+  --overlay-hue-shift: 190deg;
 
-  --color-bg: hsl(var(--hue-bg), 0%, 97%);
-  --color-bg-lit: hsl(var(--hue-bg), 0%, 100%);
-  --color-bg-contrast: hsl(var(--hue-bg-contrast), 10%, 10%);
-  --color-bg-contrast-lit: hsl(var(--hue-bg-contrast), 10%, 25%);
+  --color-bg: #dde0ee;
+  --color-bg-lit: #eef0f6;
+  --color-bg-contrast: #1e1e2e;
+  --color-bg-contrast-lit: #313244;
 
-  --color-primary: hsl(var(--hue-primary), 40%, 32%);
-  --color-primary-dim: hsl(var(--hue-primary), 40%, 28%);
-  --color-primary-contrast: hsl(var(--hue-primary-contrast), 0%, 97%);
+  --color-primary: #313244;
+  --color-primary-dim: #2e2e61;
+  --color-primary-contrast: #e6e9ff;
 
-  --color-accent: hsl(var(--hue-accent), 30%, 82%);
-  --color-accent-dim: hsl(var(--hue-accent), 30%, 54%);
-  --color-accent-contrast: hsl(var(--hue-accent-contrast), 40%, 17%);
-  --color-border-card: hsl(var(--hue-accent), 30%, 74%);
+  --color-accent: #a6e3a1;
+  --color-accent-dim: #7f849c;
+  --color-accent-contrast: #313244;
+  --color-border-card: #8fc18b;
 
   --mode-ico: "\f103";
 }
@@ -93,21 +94,21 @@ article ul a::before {
   --hue-primary-contrast: 275deg;
   --hue-accent: 275deg;
   --hue-accent-contrast: 260deg;
-  --overlay-hue-shift: 220deg;
+  --overlay-hue-shift: 200deg;
 
-  --color-bg: hsl(var(--hue-bg), 17%, 12%);
-  --color-bg-lit: hsl(var(--hue-bg), 17%, 10%);
-  --color-bg-contrast: hsl(var(--hue-bg-contrast), 10%, 90%);
-  --color-bg-contrast-lit: hsl(var(--hue-bg-contrast), 10%, 70%);
+  --color-bg: #11111b;
+  --color-bg-lit: #181825;
+  --color-bg-contrast: #cdd6f4;
+  --color-bg-contrast-lit: #b4befe;
 
-  --color-primary: hsl(var(--hue-primary), 100%, 80%);
-  --color-primary-dim: hsl(var(--hue-primary), 100%, 75%);
-  --color-primary-contrast: hsl(var(--hue-primary-contrast), 17%, 12%);
+  --color-primary: #a6e3a1;
+  --color-primary-dim: #a1e99b;
+  --color-primary-contrast: #313244;
 
-  --color-accent: hsl(var(--hue-accent), 40%, 16%);
-  --color-accent-dim: hsl(var(--hue-accent), 30%, 54%);
-  --color-accent-contrast: hsl(var(--hue-accent-contrast), 100%, 85%);
-  --color-border-card: hsl(var(--hue-accent), 30%, 25%);
+  --color-accent: #1e1e2e;
+  --color-accent-dim: #7f849c;
+  --color-accent-contrast: #b4befe;
+  --color-border-card: #313244;
 
   --mode-ico: "\f102";
 }
@@ -140,20 +141,24 @@ header {
 }
 
 h1 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-family: var(--font-special);
+  font-size: 2.5rem;
+  font-weight: 600;
   color: var(--color-accent-contrast);
   line-height: 1;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
 }
 
 header a {
+  font-family: var(--font-special);
   display: inline-block;
-  font-weight: 700;
+  font-weight: 600;
   text-decoration: underline;
   color: var(--color-accent-contrast);
   font-size: 1.75rem;
   line-height: 1;
-  margin-top: 0.75rem;
+  margin-top: 1.5rem;
   padding-left: 2rem;
   position: relative;
 }
@@ -167,7 +172,7 @@ header a::before {
 }
 
 header em {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   display: block;
   font-size: 1rem;
   position: relative;
@@ -221,8 +226,9 @@ nav ul {
 }
 
 nav a {
+  font-family: var(--font-special);
   color: var(--color-primary-contrast);
-  font-weight: 700;
+  font-weight: 600;
   font-size: min(1.125rem, 4.5vw);
   margin: 0.5rem;
   text-decoration: none;
@@ -245,7 +251,9 @@ section:last-child {
 }
 
 h2 {
-  font-size: 2rem;
+  font-family: var(--font-special);
+  font-size: 1.7rem;
+  font-weight: 400;
   color: var(--color-bg-contrast-lit);
   margin-bottom: 1.5rem;
   position: relative;
@@ -306,7 +314,7 @@ aside {
 aside a {
   background-color: var(--color-primary);
   color: var(--color-primary-contrast);
-  padding: 0 0.5rem;
+  padding: 0.2rem 0.5rem;
 }
 
 /* Cards (projects & libraries) */
@@ -367,8 +375,10 @@ article {
 }
 
 article h3 {
+  font-family: var(--font-special);
   font-size: 1.5rem;
   font-weight: 400;
+  letter-spacing: 0.05rem;
   margin-bottom: 1rem;
   color: var(--color-bg-contrast-lit);
   position: relative;
@@ -406,6 +416,7 @@ article a {
 }
 
 article ul a {
+  color: var(--color-accent-contrast);
   font-size: 0.875rem;
   line-height: 1.1rem;
   display: inline-block;
@@ -455,7 +466,7 @@ article p {
 .description > a {
   text-decoration: underline;
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .description > a + a {
@@ -529,7 +540,8 @@ form button {
   width: 100%;
   background-color: var(--color-primary);
   border: none;
-  font-family: var(--font-sans);
+  font-family: var(--font-special);
+  font-weight: 600;
   font-size: 1.25rem;
   color: var(--color-primary-contrast);
   text-transform: uppercase;
@@ -571,7 +583,7 @@ footer {
 
 footer p {
   font-size: 1rem;
-  color: var(--color-primary-dim);
+  color: var(--color-accent-contrast);
   text-align: center;
 }
 
