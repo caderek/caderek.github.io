@@ -225,7 +225,7 @@ nav a {
   font-family: var(--font-special);
   color: var(--color-primary-contrast);
   font-weight: 600;
-  font-size: min(1.125rem, 4.5vw);
+  font-size: min(1.125rem, 4vw);
   margin: 0.5rem;
   text-decoration: none;
 }
@@ -282,7 +282,7 @@ h2 .bg {
 
 p {
   line-height: 1.6;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 p + p {
@@ -538,7 +538,7 @@ form button {
   border: none;
   font-family: var(--font-special);
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   color: var(--color-primary-contrast);
   text-transform: uppercase;
   margin-top: 1.5rem;
@@ -556,7 +556,7 @@ form button:hover {
 }
 
 .info p {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 .grid {
@@ -592,7 +592,7 @@ footer ul {
 
 footer li {
   display: inline-block;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 footer a {
@@ -618,7 +618,7 @@ footer li + li::before {
 
 @media (max-width: 1006px) {
   section {
-    padding-top: 3.5rem;
+    padding-top: 4rem;
   }
 
   .card .miniature,
