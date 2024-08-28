@@ -28,16 +28,16 @@ article ul a::before {
   /* background-color: aqua; */
 }
 
-.icon-github:before {
+.icon-npm:before {
   content: "\f101";
 }
-.icon-mode-dark:before {
+.icon-mode-light:before {
   content: "\f102";
 }
-.icon-mode-light:before {
+.icon-mode-dark:before {
   content: "\f103";
 }
-.icon-npm:before {
+.icon-github:before {
   content: "\f104";
 }
 

@@ -1,6 +1,9 @@
 {
+  "codepoints": {
     "mode-dark": 61699,
     "mode-light": 61698,
     "github": 61700,
     "npm": 61697
+  }
 }
+
