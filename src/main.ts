@@ -1,5 +1,20 @@
 import "./style.css";
 
+const starsFallback: {[key: string]: number} = {
+  'sharechess/sharechess': 58,
+  'caderek/aocrunner': 164,
+  'caderek/gramma': 250,
+  'caderek/vv3d': 1,
+  'caderek/lichess-speaker': 0,
+  'caderek/smol-video': 1,
+  'caderek/conway-cubes': 2,
+  'caderek/minibtc': 11,
+  'caderek/ord': 2,
+  'caderek/benny': 746,
+  'caderek/arrows': 190,
+  'caderek/subit': 1,
+}
+
 // package metadata url: https://registry.npmjs.org/@scope/package/latest
 
 async function fetchNpmDownloads(packageName: string) {
@@ -7,7 +22,9 @@ async function fetchNpmDownloads(packageName: string) {
     `https://api.npmjs.org/downloads/point/last-month/${packageName}`
   );
 
+
   if (!res.ok) {
+  console.log({status: res.status, statustext: res.statusText})
     return;
   }
 
@@ -15,10 +32,11 @@ async function fetchNpmDownloads(packageName: string) {
 }
 
 async function fetchGitHubStars(repoName: string) {
+  console.log({repoName})
   const res = await fetch(`https://api.github.com/repos/${repoName}`);
 
   if (!res.ok) {
-    return;
+    return starsFallback[repoName] ?? 1
   }
 
   return (await res.json()).stargazers_count as number;

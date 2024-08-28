@@ -431,11 +431,11 @@ article ul a[href*="npmjs.com"] {
 }
 
 article ul a[href*="github.com"]::before {
-  content: "\f101";
+  content: "\f104";
 }
 
 article ul a[href*="npmjs.com"]::before {
-  content: "\f104";
+  content: "\f101";
 }
 
 article ul li + li {
