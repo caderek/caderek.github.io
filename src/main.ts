@@ -5,7 +5,7 @@ const starsFallback: {[key: string]: number} = {
   'caderek/aocrunner': 164,
   'caderek/gramma': 250,
   'caderek/vv3d': 1,
-  'caderek/lichess-speaker': 0,
+  'caderek/lichess-speaker': 4,
   'caderek/smol-video': 1,
   'caderek/conway-cubes': 2,
   'caderek/minibtc': 11,
