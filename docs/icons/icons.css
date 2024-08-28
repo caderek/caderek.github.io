@@ -16,15 +16,15 @@ i[class^="icon-"]:before, i[class*=" icon-"]:before {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-npm:before {
-    content: "\f101";
+.icon-mode-dark:before {
+    content: "\f103";
 }
 .icon-mode-light:before {
     content: "\f102";
 }
-.icon-mode-dark:before {
-    content: "\f103";
-}
 .icon-github:before {
     content: "\f104";
+}
+.icon-npm:before {
+    content: "\f101";
 }
