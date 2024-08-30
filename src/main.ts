@@ -24,7 +24,6 @@ async function fetchNpmDownloads(packageName: string) {
 
 
   if (!res.ok) {
-  console.log({status: res.status, statustext: res.statusText})
     return;
   }
 
@@ -32,7 +31,6 @@ async function fetchNpmDownloads(packageName: string) {
 }
 
 async function fetchGitHubStars(repoName: string) {
-  console.log({repoName})
   const res = await fetch(`https://api.github.com/repos/${repoName}`);
 
   if (!res.ok) {
