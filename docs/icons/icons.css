@@ -1,33 +1,30 @@
 @font-face {
-  font-family: "icons";
-  src:
-    url("./icons.eot?be3c450d9fd83d5789a8e0b7dbca0fb1#iefix")
-      format("embedded-opentype"),
-    url("./icons.woff2?be3c450d9fd83d5789a8e0b7dbca0fb1") format("woff2"),
-    url("./icons.woff?be3c450d9fd83d5789a8e0b7dbca0fb1") format("woff");
+    font-family: "icons";
+    src: url("./icons.eot?be3c450d9fd83d5789a8e0b7dbca0fb1#iefix") format("embedded-opentype"),
+url("./icons.woff2?be3c450d9fd83d5789a8e0b7dbca0fb1") format("woff2"),
+url("./icons.woff?be3c450d9fd83d5789a8e0b7dbca0fb1") format("woff");
 }
 
-i[class^="icon-"]:before,
-i[class*=" icon-"]:before {
-  font-family: icons !important;
-  font-style: normal;
-  font-weight: normal !important;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+i[class^="icon-"]:before, i[class*=" icon-"]:before {
+    font-family: icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .icon-mode-dark:before {
-  content: "\f103";
+    content: "\f103";
 }
 .icon-mode-light:before {
-  content: "\f102";
+    content: "\f102";
 }
 .icon-github:before {
-  content: "\f104";
+    content: "\f104";
 }
 .icon-npm:before {
-  content: "\f101";
+    content: "\f101";
 }
