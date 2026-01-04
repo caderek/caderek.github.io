@@ -3,7 +3,8 @@
 @font-face {
   font-family: "Icons";
   src:
-    url("/icons/icons.ttf?874e82c750617d187fb86377aff91dd6") format("truetype"),
+    url("./icons.eot?be3c450d9fd83d5789a8e0b7dbca0fb1#iefix")
+      format("embedded-opentype"),
     url("/icons/icons.woff?874e82c750617d187fb86377aff91dd6") format("woff"),
     url("/icons/icons.woff2?874e82c750617d187fb86377aff91dd6") format("woff2");
 }
